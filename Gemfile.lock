@@ -70,9 +70,9 @@ GEM
     bootsnap (1.8.1)
       msgpack (~> 1.0)
     builder (3.2.4)
-    byebug (11.1.3)
     callee (0.3.5)
       dry-initializer (>= 2.5, < 4.0)
+    coderay (1.1.3)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     draper (4.0.2)
@@ -121,6 +121,9 @@ GEM
     nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     puma (5.4.0)
       nio4r (~> 2.0)
     racc (1.5.2)
@@ -185,7 +188,6 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bootsnap (>= 1.4.4)
-  byebug
   callee
   draper
   dry-monads
@@ -193,6 +195,7 @@ DEPENDENCIES
   listen (~> 3.3)
   money-rails (~> 1.12)
   pg (~> 1.1)
+  pry
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.4, >= 6.1.4.1)

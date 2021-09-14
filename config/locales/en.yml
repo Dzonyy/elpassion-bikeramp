@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  trips:
+    distance_calculator_error: 'Coordinates are missing'

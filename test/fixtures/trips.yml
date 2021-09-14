@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: trips
+#
+#  id                  :bigint           not null, primary key
+#  date                :datetime
+#  destination_address :string
+#  distance            :decimal(, )
+#  price_subunit       :decimal(, )
+#  start_address       :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+one:
+  date: 2021-09-14 18:52:22
+  distance: 9.99
+  price: 9.99
+  start_address: MyString
+  destination_address: MyString
+
+two:
+  date: 2021-09-14 18:52:22
+  distance: 9.99
+  price: 9.99
+  start_address: MyString
+  destination_address: MyString
