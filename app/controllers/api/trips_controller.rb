@@ -7,14 +7,14 @@ module Api
       when Success
         render json: ::TripSerializer.call(trip: result.success), status: 201
       when Failure
-        render json: result.failure
+        render json: result.failure, status: 422
       end
     end
 
     private
 
     def trip_params
-      params.permit(:price_subunit, :date, :start_address, :destination_address)
+      params.permit(:price, :date, :start_address, :destination_address)
     end
   end
 end

@@ -3,7 +3,7 @@
 # Table name: trips
 #
 #  id                  :bigint           not null, primary key
-#  date                :datetime
+#  date                :date
 #  destination_address :string
 #  distance            :decimal(, )
 #  price_subunit       :decimal(, )

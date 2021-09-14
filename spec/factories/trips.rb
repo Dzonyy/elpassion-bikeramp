@@ -11,9 +11,12 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
-class Trip < ApplicationRecord
-  validates :date, :price, :destination_address, :start_address, presence: true
-  validates :price, :distance, numericality: { greater_than: 0 }
-
-  monetize :price_subunit
+FactoryBot.define do
+  factory :trip do
+    start_address { 'Dietla  52, Kraków, Polska' }
+    destination_address { 'Jana Kantego Federowicza 57, Kraków, Polska' }
+    date { '1999-02-02' }
+    price { '5' }
+    distance { '3.85' }
+  end
 end
