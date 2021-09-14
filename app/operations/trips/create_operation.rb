@@ -16,7 +16,7 @@ module Trips
       if trip.save
         Success(trip)
       else
-        Failure(trip.errors)
+        Failure(trip.errors.messages)
       end
     end
 

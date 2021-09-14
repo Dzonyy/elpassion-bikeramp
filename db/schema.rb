@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_09_14_165222) do
   enable_extension "plpgsql"
 
   create_table "trips", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.decimal "distance"
     t.decimal "price_subunit"
     t.string "start_address"
