@@ -6,7 +6,7 @@
 #  date                :date
 #  destination_address :string
 #  distance            :decimal(, )
-#  price_subunit       :decimal(, )
+#  price_subunit       :integer
 #  start_address       :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null

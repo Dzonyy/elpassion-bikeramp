@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_14_165222) do
   create_table "trips", force: :cascade do |t|
     t.date "date"
     t.decimal "distance"
-    t.decimal "price_subunit"
+    t.integer "price_subunit"
     t.string "start_address"
     t.string "destination_address"
     t.datetime "created_at", precision: 6, null: false
