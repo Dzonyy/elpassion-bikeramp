@@ -3,15 +3,15 @@ module Trips
     option :params
 
     def call
-      yield calculate_distance
+      distance = yield calculate_distance
 
-      create_trip
+      create_trip(distance: distance)
     end
 
     private
 
-    def create_trip
-      trip = Trip.create(params.merge(distance: calculate_distance.success))
+    def create_trip(distance:)
+      trip = Trip.new(params.merge(distance: distance))
 
       if trip.save
         Success(trip)
