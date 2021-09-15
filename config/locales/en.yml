@@ -33,3 +33,6 @@ en:
   hello: "Hello world"
   trips:
     distance_calculator_error: 'Coordinates are missing'
+  services:
+    no_trips_in_current_month: You have no trips in this month
+    no_trips_in_current_week: You have no trips in this week
