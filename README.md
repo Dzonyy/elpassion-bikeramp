@@ -1,24 +1,32 @@
-# README
+# Bikeramp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technology
 
-Things you may want to cover:
+| Name |  Version |
+| :--: | :---: |
+| [Ruby](https://www.ruby-lang.org) | 3.0.2 |
+| [Ruby on Rails](http://www.rubyonrails.org/) | 6.1.4 |
 
-* Ruby version
+## Setup
 
-* System dependencies
+#### Clone the repository
 
-* Configuration
+    $ git clone https://github.com/Dzonyy/elpassion-bikeramp
 
-* Database creation
+#### Install gems
 
-* Database initialization
+    $ bundle install
 
-* How to run the test suite
+### Create your local database:
 
-* Services (job queues, cache servers, search engines, etc.)
+    $ rails db:setup
 
-* Deployment instructions
+### Migrate your database::
 
-* ...
+    $ rails db:migrate
+
+### Run the application
+
+    $ rails s
+
+Your app should now be running on [localhost:3000](http://localhost:3000).
