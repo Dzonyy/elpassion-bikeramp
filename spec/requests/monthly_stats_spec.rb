@@ -5,16 +5,24 @@ RSpec.describe 'Monthly stats', type: :request do
 
   let(:headers) { { 'ACCEPT' => 'application/json' } }
   let(:params) { {} }
-  let(:time_zone_now) { Time.zone.now }
+  let(:time_zone_now) { '2021-09-15' }
   let(:json_response) { JSON.parse(response.body) }
 
+  before do
+    travel_to(time_zone_now)
+  end
+
+  after do
+    travel_back
+  end
+
   context 'with valid data' do
-    let!(:trip_1) { create(:trip, date: time_zone_now, price: 5, distance: 10.0) }
-    let!(:trip_2) { create(:trip, date: time_zone_now, price: 5, distance: 10.0) }
-    let!(:trip_3) { create(:trip, date: time_zone_now, price: 5, distance: 10.0) }
-    let!(:trip_4) { create(:trip, date: time_zone_now - 1.day, price: 7, distance: 13.0) }
-    let!(:trip_5) { create(:trip, date: time_zone_now - 1.day, price: 7, distance: 13.0) }
-    let!(:trip_6) { create(:trip, date: time_zone_now - 1.day, price: 5, distance: 10.0) }
+    let!(:trip_1) { create(:trip, date: '2021-09-15', price: 5, distance: 10.0) }
+    let!(:trip_2) { create(:trip, date: '2021-09-15', price: 5, distance: 10.0) }
+    let!(:trip_3) { create(:trip, date: '2021-09-15', price: 5, distance: 10.0) }
+    let!(:trip_4) { create(:trip, date: '2021-09-14', price: 7, distance: 13.0) }
+    let!(:trip_5) { create(:trip, date: '2021-09-14', price: 7, distance: 13.0) }
+    let!(:trip_6) { create(:trip, date: '2021-09-14', price: 5, distance: 10.0) }
 
     it 'returns 201 with json format' do
       subject
@@ -45,7 +53,7 @@ RSpec.describe 'Monthly stats', type: :request do
     context 'with invalid address' do
       it 'returns 422 with json format' do
         subject
-        expect(response).to have_http_status(401)
+        expect(response).to have_http_status(422)
         expect(response.content_type).to eq('application/json; charset=utf-8')
       end
 
