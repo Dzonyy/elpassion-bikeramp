@@ -7,7 +7,7 @@ module Api
       when Success
         render json: WeeklyStatsSerializer.call(stats: result.success), status: 201
       when Failure
-        render json: result.failure, status: 401
+        render json: result.failure, status: 422
       end
     end
 
@@ -18,7 +18,7 @@ module Api
       when Success
         render json: MonthlyStatsSerializer.call(stats: result.success), status: 201
       when Failure
-        render json: result.failure, status: 401
+        render json: result.failure, status: 422
       end
     end
   end
