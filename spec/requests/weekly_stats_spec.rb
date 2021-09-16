@@ -5,7 +5,7 @@ RSpec.describe 'Weekly stats', type: :request do
 
   let(:headers) { { 'ACCEPT' => 'application/json' } }
   let(:params) { {} }
-  let(:time_zone_now) { Time.zone.now }
+  let(:time_zone_now) { '2021-09-15' }
   let(:json_response) { JSON.parse(response.body) }
 
   context 'with valid data' do
@@ -32,7 +32,7 @@ RSpec.describe 'Weekly stats', type: :request do
     context 'with invalid address' do
       it 'returns 422 with json format' do
         subject
-        expect(response).to have_http_status(401)
+        expect(response).to have_http_status(422)
         expect(response.content_type).to eq('application/json; charset=utf-8')
       end
 
